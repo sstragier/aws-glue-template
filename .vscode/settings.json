@@ -1,0 +1,6 @@
+{
+    // Tell the compiler about the Spark libraries
+    "python.autoComplete.extraPaths": [
+        "${env:SPARK_HOME}/python"
+    ]
+}

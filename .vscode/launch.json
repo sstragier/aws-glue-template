@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Glue Job",
+            "type": "python",
+            "request": "launch",
+
+            // Run via Spark
+            "windows": {
+                "pythonPath": "${env:SPARK_HOME}/bin/spark-submit.cmd"
+            },
+            "osx": {
+                "pythonPath": "${env:SPARK_HOME}/bin/spark-submit"
+            },
+            "linux": {
+                "pythonPath": "${env:SPARK_HOME}/bin/spark-submit"
+            },
+            
+            // Run the current python file
+            "program": "${file}",
+
+            // Need to use integrated terminal, because otherwise Spark's log statements aren't printed
+            "console": "integratedTerminal",
+            
+            "env": {
+                // This tells Spark about the config file created when building AWS Glue, which has the AWS Glue jars to include
+                "SPARK_CONF_DIR": "${workspaceFolder}/conf"
+            },
+            
+            "args":
+            [
+                "--JOB_NAME=test",
+                "-v"
+            ]
+        }
+    ]
+}
