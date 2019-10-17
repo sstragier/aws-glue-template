@@ -1,6 +1,7 @@
 {
-    // Tell the compiler about the Spark libraries
+    // Tell the compiler about the AWS Glue and Spark libraries
     "python.autoComplete.extraPaths": [
+        "${workspaceFolder}",
         "${env:SPARK_HOME}/python"
     ]
 }
