@@ -28,7 +28,8 @@
             
             "args":
             [
-                "--JOB_NAME=test",
+                "--LOCAL",
+                "--JOB_NAME", "test",
                 "-v"
             ]
         }

@@ -6,6 +6,8 @@ from pyspark.context import SparkContext
 
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
+isLocal = "--LOCAL" in sys.argv
+print("isLocal: {}".format(isLocal))
 
 sc = SparkContext()
 glueContext = GlueContext(sc)
